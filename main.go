@@ -111,7 +111,6 @@ func isCepValid(arg_cep string) bool {
 }
 
 func getCepInfoByBrasilAPi(cep string, chanCep chan respCepApi, chanErr chan error) {
-	time.Sleep(1200 * time.Millisecond)
 	url, err := applyCepToUrlApi(cep, URL_CEP_PATTERN_BRASIL)
 	if err != nil {
 		chanErr <- err
@@ -142,7 +141,6 @@ func getCepInfoByBrasilAPi(cep string, chanCep chan respCepApi, chanErr chan err
 }
 
 func getCepInfoByViaCepAPi(cep string, chanCep chan respCepApi, chanErr chan error) {
-	//time.Sleep(1500 * time.Millisecond)
 	url, err := applyCepToUrlApi(cep, URL_CEP_PATTERN_VIA_CEP)
 	if err != nil {
 		chanErr <- err
